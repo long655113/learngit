@@ -60,3 +60,8 @@ $ git commit -m "remove test.txt"
  
  把误删的文件恢复到最新版本
  $ git checkout -- test.txt
+ 
+ 与远程库连接
+ git remote add origin https://github.com/long655113/test.git
+ 提交远程库
+ git push -u origin master
