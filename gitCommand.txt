@@ -1,0 +1,41 @@
+﻿git的常用命令
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+创建版本库
+$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+
+添加文件到库
+$ git add readme.txt
+提交文件
+$ git commit -m "wrote a readme file"
+[master (root-commit) cb926e7] wrote a readme file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.txt
+ 
+查看状态
+$ git status
+
+git diff
+
+显示从最近到最远的提交日志
+$ git log
+$ git log --pretty=oneline
+
+版本回退
+首先，Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交3628164...882e1e0（注意我的提交ID和你的肯定不一样），
+上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+$ git reset --hard HEAD^
+HEAD is now at ea34578 add distributed
+
+版本号没必要写全前几位就可以了
+$ git reset --hard 3628164
+HEAD is now at 3628164 append GPL
+
+查看你的每一次命令
+$ git reflog
+ea34578 HEAD@{0}: reset: moving to HEAD^
+3628164 HEAD@{1}: commit: append GPL
+ea34578 HEAD@{2}: commit: add distributed
+cb926e7 HEAD@{3}: commit (initial): wrote a readme file
