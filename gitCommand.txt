@@ -98,3 +98,17 @@ $ git stash list
 git stash pop
 
 一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；
+
+Feature分支
+创建Feature分支：
+git checkout -b feature-vulcan
+删除
+git branch -d feature-vulcan
+删除失败的话， 强制删除：
+git branch -D feature-vulcan
+
+多人协作
+远程库的信息，用git remote
+git push origin master	将master分支推送到远程
+git clone https://github.com/long655113/learngit.git	抓取远程分支的master
+git checkout -b dev origin/dev	创建远程origin的dev分支到本地
